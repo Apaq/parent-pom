@@ -17,16 +17,16 @@
     <developers>
         <developer>
             <name>Michael Krog</name>
-            <organization>CodeZoo</organization>
-            <organizationUrl>http://codezoo.dk</organizationUrl>
+            <organization>Apaq</organization>
+            <organizationUrl>http://apaq.dk</organizationUrl>
             <url>https://github.com/michaelkrog</url>
         </developer>
     </developers>
 
     <scm>
-        <connection>scm:git:https://github.com/CodeZooDK/parent-pom.git</connection>
-        <developerConnection>scm:git:git@github.com:CodeZooDK/parent-pom.git</developerConnection>
-        <url>https://github.com/CodeZooDK/parent-pom</url>
+        <connection>scm:git:https://github.com/Previsto/parent-pom.git</connection>
+        <developerConnection>scm:git:git@github.com:Previsto/parent-pom.git</developerConnection>
+        <url>https://github.com/Previsto/parent-pom</url>
         <tag>HEAD</tag>
     </scm>
     
