@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>dk.apaq</groupId>
+    <artifactId>parent</artifactId>
+    <version>1.2.2-SNAPSHOT</version>
+    <packaging>pom</packaging>
+
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>1.8</java.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+    <developers>
+        <developer>
+            <name>Michael Krog</name>
+            <organization>CodeZoo</organization>
+            <organizationUrl>http://codezoo.dk</organizationUrl>
+            <url>https://github.com/michaelkrog</url>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git:https://github.com/CodeZooDK/parent-pom.git</connection>
+        <developerConnection>scm:git:git@github.com:CodeZooDK/parent-pom.git</developerConnection>
+        <url>https://github.com/CodeZooDK/parent-pom</url>
+        <tag>HEAD</tag>
+    </scm>
+    
+    <repositories>
+        <repository>
+            <id>spring-milestones</id>
+            <name>Spring Milestones</name>
+            <url>https://repo.spring.io/libs-milestone</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>aws-release</id>
+            <name>Apaq Release Repository</name>
+            <url>s3://apaq-repository/release</url>
+        </repository>
+    </repositories>
+
+    <!--distributionManagement>
+        <repository>
+            <id>aws-release</id>
+            <name>Apaq Release Repository</name>
+            <url>s3://apaq-repository/release</url>
+        </repository>
+        <snapshotRepository>
+            <id>aws-snapshot</id>
+            <name>Apaq Snapshot Repository</name>
+            <url>s3://apaq-repository/snapshot</url>
+        </snapshotRepository>
+    </distributionManagement-->
+    
+    <profiles>
+        <profile>
+            <id>distribute-private</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <distributionManagement>
+                <repository>
+                    <id>aws-release</id>
+                    <name>Apaq Release Repository</name>
+                    <url>s3://apaq-repository/release</url>
+                </repository>
+                <snapshotRepository>
+                    <id>aws-snapshot</id>
+                    <name>Apaq Snapshot Repository</name>
+                    <url>s3://apaq-repository/snapshot</url>
+                </snapshotRepository>
+            </distributionManagement>
+        </profile>
+        <profile>
+            <id>distribute-public</id>
+            <distributionManagement>
+                <repository>
+                    <id>aws-release</id>
+                    <name>Apaq Release Repository</name>
+                    <url>s3://apaq-repository-public/release</url>
+                </repository>
+                <snapshotRepository>
+                    <id>aws-snapshot</id>
+                    <name>Apaq Snapshot Repository</name>
+                    <url>s3://apaq-repository-public/snapshot</url>
+                </snapshotRepository>
+            </distributionManagement>
+        </profile>
+    </profiles>
+
+    <build>
+        <extensions>
+            <extension>
+                <groupId>org.springframework.build</groupId>
+                <artifactId>aws-maven</artifactId>
+                <version>5.0.0.RELEASE</version>
+            </extension>
+        </extensions>
+        <plugins>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.7.6.201602180812</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>report</id>
+                        <phase>prepare-package</phase>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            
+            <!--plugin>
+                <artifactId>maven-release-plugin</artifactId>
+                <configuration>
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
+                    <preparationGoals>clean install</preparationGoals>
+                </configuration>
+            </plugin-->
+            
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.5.3</version>
+            </plugin>
+        </plugins>
+    </build>
+    
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <configuration>
+                    <configLocation>https://raw.githubusercontent.com/checkstyle/checkstyle/master/src/main/resources/sun_checks.xml</configLocation>
+                </configuration>
+            </plugin>
+            
+        </plugins>
+    </reporting>
+    
+    <modules>
+        <module>boot-parent</module>
+        <module>cloud-parent-pom</module>
+    </modules>
+    <name>Apaq Parent POM</name>
+</project>

@@ -1,0 +1,6 @@
+nbactions.xml
+/target/
+/xena-cloud-parent-pom/target/
+/codezoo-core/target/
+**/pom.xml.versionsBackup
+pom.xml.versionsBackup
