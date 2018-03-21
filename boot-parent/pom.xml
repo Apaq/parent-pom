@@ -4,7 +4,7 @@
     <parent>
         <groupId>dk.apaq</groupId>
         <artifactId>parent</artifactId>
-        <version>1.2.2-SNAPSHOT</version>
+        <version>1.2.5-SNAPSHOT</version>
     </parent>
     <artifactId>boot-parent</artifactId>
     <packaging>pom</packaging>
@@ -13,7 +13,7 @@
         <docker.plugin.version>0.4.13</docker.plugin.version>
         <docker.image.prefix>apaq</docker.image.prefix>
 
-        <spring-boot.version>1.4.1.RELEASE</spring-boot.version>
+        <spring-boot.version>1.5.10.RELEASE</spring-boot.version>
         
         <docker.host.rpi>https://a2.xena:2376</docker.host.rpi>
     </properties>
