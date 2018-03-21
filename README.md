@@ -1,16 +1,16 @@
-CodeZoo Parent POM
+Apaq Parent POM
 =================
 The parent Maven POM for CodeZoo Maven Projects.
 
 What is it?
 -----------
-The CodeZoo parent POM provides default configuration for Maven builds.
+The Apaq arent POM provides default configuration for Maven builds.
  
 * Recommended/Default versions for the most commonly used Maven plugins
 * Profiles for generating docker builds, and enforcing a minimum versions of 
   Java and Maven
 * Distribution Management and other configuration for deploying to the 
-  CodeZoo Maven repositories
+  Apaq Maven repositories
 
 How to use it?
 --------------
@@ -19,11 +19,11 @@ Start out by adding the public repository to settings.xml
     <profiles>
    
         <profile>
-            <id>xena</id>
+            <id>apaq</id>
             <repositories>
                 <repository>
-                    <id>codezoo-public</id>
-                    <name>CodeZoos public repo</name>
+                    <id>apaq-public</id>
+                    <name>Apaq public repo</name>
                     <url>http://apaq-repository-public.s3-website-eu-west-1.amazonaws.com/release</url>
                 </repository>
             </repositories>
@@ -40,7 +40,7 @@ The add the parent configuration to your pom.
 
 ```xml
     <parent>
-      <groupId>dk.codezoo</groupId>
+      <groupId>dk.apaq</groupId>
       <artifactId>parent</artifactId>
       <version>1.1.0</version>
     </parent>
