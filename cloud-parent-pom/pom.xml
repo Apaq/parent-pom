@@ -278,4 +278,8 @@
         </profile>
     </profiles>
     <name>Apaq Cloud Parent POM</name>
+
+  <scm>
+    <tag>cloud-parent-1.2.5</tag>
+  </scm>
 </project>
