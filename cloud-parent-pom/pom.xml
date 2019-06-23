@@ -4,7 +4,7 @@
     <parent>
         <groupId>dk.apaq</groupId>
         <artifactId>parent</artifactId>
-        <version>1.2.7-SNAPSHOT</version>
+        <version>1.2.7</version>
     </parent>
     <groupId>dk.apaq</groupId>
     <artifactId>cloud-parent</artifactId>
@@ -280,6 +280,6 @@
     <name>Apaq Cloud Parent POM</name>
 
   <scm>
-    <tag>cloud-parent-1.2.5</tag>
+    <tag>parent-1.2.7</tag>
   </scm>
 </project>
