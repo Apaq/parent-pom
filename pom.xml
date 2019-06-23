@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>dk.apaq</groupId>
     <artifactId>parent</artifactId>
-    <version>1.2.6</version>
+    <version>1.2.7-SNAPSHOT</version>
     <packaging>pom</packaging>
 
 
@@ -27,7 +27,7 @@
         <connection>scm:git:https://github.com/Apaq/parent-pom.git</connection>
         <developerConnection>scm:git:git@github.com:Apaq/parent-pom.git</developerConnection>
         <url>https://github.com/Apaq/parent-pom</url>
-        <tag>parent-1.2.6</tag>
+        <tag>HEAD</tag>
     </scm>
     
     <repositories>
