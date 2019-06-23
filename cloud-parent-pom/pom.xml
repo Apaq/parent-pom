@@ -13,7 +13,7 @@
     <properties>
         <docker.plugin.version>0.4.13</docker.plugin.version>
         <docker.image.prefix>apaq</docker.image.prefix>
-        <spring-boot.version>1.5.10.RELEASE</spring-boot.version>
+        <spring-boot.version>1.5.21.RELEASE</spring-boot.version>
         <docker.host.rpi>https://a2.xena:2376</docker.host.rpi>
         <docs.snippets.directory>${project.build.directory}/generated-snippets</docs.snippets.directory>
     </properties>
